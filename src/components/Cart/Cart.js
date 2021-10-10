@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import './Cart.css';
 
 const Cart = (props) => {
@@ -22,12 +21,9 @@ const Cart = (props) => {
             <p>Total Price : {total.toFixed(2)}</p>
             <p>Tax : {tax.toFixed(2)}</p>
             <h5 className="text-danger">Order Total : {totalWithTax.toFixed(2)}</h5>
-            <NavLink to="/orders">
-                <button className="btn btn-warning border border-1 border-dark" type="button">
-                    Review your order
-                </button> 
-            </NavLink>
-
+                {
+                    props.children
+                }
         </div>
     );
 };
